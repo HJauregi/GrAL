@@ -1,83 +1,114 @@
-<!-- NAVBAR COMPLETO CORREGIDO -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top navbar-custom" id="navbar">
+<!-- NAVBAR DINÁMICO PARA TODAS LAS PÁGINAS -->
+<div id="navbar-placeholder"></div>
 
-  <a class="navbar-brand" href="/GrAL/index.html">Gradu Amaierako Lana</a>
+<script>
+  // Detecta si estamos dentro de /windows/ o en la raíz
+  const basePath = window.location.pathname.includes("/windows/") ? "../" : "";
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" 
-          data-target="#navbarNav" aria-controls="navbarNav" 
-          aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  // HTML completo del navbar con rutas relativas dinámicas
+  const navbarHTML = `
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top navbar-custom" id="navbar">
 
-  <div class="collapse navbar-collapse" id="navbarNav">
+    <a class="navbar-brand" href="${basePath}index.html">Gradu Amaierako Lana</a>
 
-    <ul class="navbar-nav ml-auto">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" 
+            data-target="#navbarNav" aria-controls="navbarNav" 
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <!-- Hasiera -->
-      <li class="nav-item">
-        <a class="nav-link" href="/GrAL/index.html">Hasiera</a>
-      </li>
+    <div class="collapse navbar-collapse" id="navbarNav">
 
-      <!-- Arautegia (Dropdown) -->
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" 
-           data-toggle="dropdown" aria-expanded="false">
-          Arautegia
-        </a>
+      <ul class="navbar-nav ml-auto">
 
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="/GrAL/windows/araudia-infor.html">Ingenieritza Informatikoa</a>
-          <a class="dropdown-item" href="/GrAL/windows/araudia-ia.html">Adimen Artifiziala</a>
-        </div>
-      </li>
+        <!-- Hasiera -->
+        <li class="nav-item">
+          <a class="nav-link" href="${basePath}index.html">Hasiera</a>
+        </li>
 
-      <!-- Egutegia -->
-      <li class="nav-item">
-        <a class="nav-link" href="/GrAL/windows/egutegia.html">Egutegia</a>
-      </li>
-
-      <!-- Aurreko urteetako memoriak -->
-      <li class="nav-item dropdown">
-        <div class="btn-group">
-          <a class="nav-link" href="/GrAL/windows/memoriak.html">GrAL Memoriak</a>
-
-          <a class="nav-link dropdown-toggle dropdown-toggle-split" href="#" id="memoriakDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="sr-only">Toggle Dropdown</span>
+        <!-- Arautegia (Dropdown) -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" 
+             data-toggle="dropdown" aria-expanded="false">
+            Arautegia
           </a>
-
-          <div class="dropdown-menu" aria-labelledby="memoriakDropdown">
-            <a class="dropdown-item" href="/GrAL/windows/memoriak-informatika.html">Ingenieritza Informatikako Memoriak</a>
-            <a class="dropdown-item" href="/GrAL/windows/memoriak-ia.html">Adimen Artifizialeko Memoriak</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="${basePath}windows/araudia-infor.html">Ingenieritza Informatikoa</a>
+            <a class="dropdown-item" href="${basePath}windows/araudia-ia.html">Adimen Artifiziala</a>
           </div>
-        </div>
-      </li>
+        </li>
 
-      <!-- About us -->
-      <li class="nav-item">
-        <a class="nav-link" href="/GrAL/windows/about-us.html">About us</a>
-      </li>
+        <!-- Egutegia -->
+        <li class="nav-item">
+          <a class="nav-link" href="${basePath}windows/egutegia.html">Egutegia</a>
+        </li>
 
-      <!-- Autoebaluazioa -->
-      <li class="nav-item">
-        <a class="nav-link" href="/GrAL/windows/galdetegia.html">Autoebaluazio galdetegia</a>
-      </li>
+        <!-- Memoriak -->
+        <li class="nav-item dropdown">
+          <div class="btn-group">
+            <a class="nav-link" href="${basePath}windows/memoriak.html">GrAL Memoriak</a>
+            <a class="nav-link dropdown-toggle dropdown-toggle-split" href="#" id="memoriakDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="sr-only">Toggle Dropdown</span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="memoriakDropdown">
+              <a class="dropdown-item" href="${basePath}windows/memoriak-informatika.html">Ingenieritza Informatikako Memoriak</a>
+              <a class="dropdown-item" href="${basePath}windows/memoriak-ia.html">Adimen Artifizialeko Memoriak</a>
+            </div>
+          </div>
+        </li>
 
-    </ul>
-  </div>
-</nav>
+        <!-- About us -->
+        <li class="nav-item">
+          <a class="nav-link" href="${basePath}windows/about-us.html">About us</a>
+        </li>
 
-<!-- NAVBAR STYLE (necesario para el efecto shrink) -->
-<style>
-  .navbar-custom {
-    transition: all 0.3s ease;
-    height: 250px;
+        <!-- Autoebaluazioa -->
+        <li class="nav-item">
+          <a class="nav-link" href="${basePath}windows/galdetegia.html">Autoebaluazio galdetegia</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <style>
+    .navbar-custom {
+      transition: all 0.3s ease;
+      height: 250px;
+    }
+
+    .navbar-shrink {
+      height: 50px;
+    }
+
+    .navbar-brand, .nav-link {
+      line-height: 1;
+    }
+  </style>
+  `;
+
+  // Inserta el navbar en la página
+  document.getElementById("navbar-placeholder").innerHTML = navbarHTML;
+
+  // Ajusta el padding del body según altura del navbar
+  function adjustBodyPadding() {
+    const navbar = document.getElementById("navbar");
+    if (navbar) {
+      document.body.style.paddingTop = navbar.offsetHeight + 10 + "px";
+    }
   }
+  adjustBodyPadding();
+  window.addEventListener("resize", adjustBodyPadding);
 
-  .navbar-shrink {
-    height: 50px;
-  }
-
-  .navbar-brand, .nav-link {
-    line-height: 1;
-  }
-</style>
+  // Efecto shrink al hacer scroll
+  window.addEventListener("scroll", function () {
+    const navbar = document.getElementById("navbar");
+    if (navbar) {
+      if (window.pageYOffset > 50) {
+        navbar.classList.add("navbar-shrink");
+      } else {
+        navbar.classList.remove("navbar-shrink");
+      }
+    }
+  });
+</script>
