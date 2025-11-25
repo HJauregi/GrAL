@@ -15,14 +15,18 @@ document.getElementById("navbar-placeholder").innerHTML = `
       <!-- Hasiera -->
       <li class="nav-item"><a class="nav-link" href="${basePath}index.html">Hasiera</a></li>
 
-      <!-- Arautegia Dropdown -->
+      <!-- Arautegia Dropdown como botón -->
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="${basePath}windows/araudia.html" role="button" data-toggle="dropdown" aria-expanded="false">
-          Arautegia
-        </a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="${basePath}windows/araudia-infor.html">Ingenieritza Informatikoa</a>
-          <a class="dropdown-item" href="${basePath}windows/araudia-ia.html">Adimen Artifiziala</a>
+        <div class="btn-group">
+          <a class="nav-link" href="${basePath}windows/araudia.html">Arautegia</a>
+          <a class="nav-link dropdown-toggle dropdown-toggle-split" href="#" id="arautegiaDropdown"
+             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="sr-only">Toggle Dropdown</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="arautegiaDropdown">
+            <a class="dropdown-item" href="${basePath}windows/araudia-infor.html">Ingenieritza Informatikoa</a>
+            <a class="dropdown-item" href="${basePath}windows/araudia-ia.html">Adimen Artifiziala</a>
+          </div>
         </div>
       </li>
 
