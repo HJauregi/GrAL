@@ -11,11 +11,13 @@ document.getElementById("navbar-placeholder").innerHTML = `
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
+
+      <!-- Hasiera -->
       <li class="nav-item"><a class="nav-link" href="${basePath}index.html">Hasiera</a></li>
 
       <!-- Arautegia Dropdown -->
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="${basePath}windows/araudia.html" role="button" data-toggle="dropdown" aria-expanded="false">
           Arautegia
         </a>
         <div class="dropdown-menu">
@@ -24,6 +26,7 @@ document.getElementById("navbar-placeholder").innerHTML = `
         </div>
       </li>
 
+      <!-- Egutegia -->
       <li class="nav-item"><a class="nav-link" href="${basePath}windows/egutegia.html">Egutegia</a></li>
 
       <!-- Memoriak Dropdown -->
@@ -41,8 +44,12 @@ document.getElementById("navbar-placeholder").innerHTML = `
         </div>
       </li>
 
+      <!-- About us -->
       <li class="nav-item"><a class="nav-link" href="${basePath}windows/about-us.html">About us</a></li>
+
+      <!-- Autoebaluazioa -->
       <li class="nav-item"><a class="nav-link" href="${basePath}windows/galdetegia.html">Autoebaluazio galdetegia</a></li>
+
     </ul>
   </div>
 </nav>
