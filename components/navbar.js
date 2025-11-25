@@ -15,7 +15,7 @@ document.getElementById("navbar-placeholder").innerHTML = `
       <!-- Hasiera -->
       <li class="nav-item"><a class="nav-link" href="${basePath}index.html">Hasiera</a></li>
 
-      <!-- Arautegia Dropdown como botón -->
+      <!-- Arautegia Dropdown como botón principal + split -->
       <li class="nav-item dropdown">
         <div class="btn-group">
           <a class="nav-link" href="${basePath}windows/araudia.html">Arautegia</a>
