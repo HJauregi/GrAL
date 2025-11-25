@@ -3,13 +3,13 @@
 
 <script>
   // Detecta si estamos dentro de /windows/ o en la raíz
-  const basePath = window.location.pathname.includes("/windows/") ? "../" : "";
+  const basePath = window.location.pathname.includes("/GrAL/windows/") ? "../" : "";
 
-  // HTML completo del navbar con rutas relativas dinámicas
+  // HTML completo del navbar con rutas absolutas
   const navbarHTML = `
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top navbar-custom" id="navbar">
 
-    <a class="navbar-brand" href="${basePath}index.html">Gradu Amaierako Lana</a>
+    <a class="navbar-brand" href="/GrAL/index.html">Gradu Amaierako Lana</a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" 
             data-target="#navbarNav" aria-controls="navbarNav" 
@@ -23,7 +23,7 @@
 
         <!-- Hasiera -->
         <li class="nav-item">
-          <a class="nav-link" href="${basePath}index.html">Hasiera</a>
+          <a class="nav-link" href="/GrAL/index.html">Hasiera</a>
         </li>
 
         <!-- Arautegia (Dropdown) -->
@@ -33,38 +33,40 @@
             Arautegia
           </a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="${basePath}windows/araudia-infor.html">Ingenieritza Informatikoa</a>
-            <a class="dropdown-item" href="${basePath}windows/araudia-ia.html">Adimen Artifiziala</a>
+            <a class="dropdown-item" href="/GrAL/windows/araudia-infor.html">Ingenieritza Informatikoa</a>
+            <a class="dropdown-item" href="/GrAL/windows/araudia-ia.html">Adimen Artifiziala</a>
           </div>
         </li>
 
         <!-- Egutegia -->
         <li class="nav-item">
-          <a class="nav-link" href="${basePath}windows/egutegia.html">Egutegia</a>
+          <a class="nav-link" href="/GrAL/windows/egutegia.html">Egutegia</a>
         </li>
 
         <!-- Memoriak -->
         <li class="nav-item dropdown">
           <div class="btn-group">
-            <a class="nav-link" href="${basePath}windows/memoriak.html">GrAL Memoriak</a>
+            <a class="nav-link" href="/GrAL/windows/memoriak.html">GrAL Memoriak</a>
+
             <a class="nav-link dropdown-toggle dropdown-toggle-split" href="#" id="memoriakDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="sr-only">Toggle Dropdown</span>
             </a>
+
             <div class="dropdown-menu" aria-labelledby="memoriakDropdown">
-              <a class="dropdown-item" href="${basePath}windows/memoriak-informatika.html">Ingenieritza Informatikako Memoriak</a>
-              <a class="dropdown-item" href="${basePath}windows/memoriak-ia.html">Adimen Artifizialeko Memoriak</a>
+              <a class="dropdown-item" href="/GrAL/windows/memoriak-informatika.html">Ingenieritza Informatikako Memoriak</a>
+              <a class="dropdown-item" href="/GrAL/windows/memoriak-ia.html">Adimen Artifizialeko Memoriak</a>
             </div>
           </div>
         </li>
 
         <!-- About us -->
         <li class="nav-item">
-          <a class="nav-link" href="${basePath}windows/about-us.html">About us</a>
+          <a class="nav-link" href="/GrAL/windows/about-us.html">About us</a>
         </li>
 
         <!-- Autoebaluazioa -->
         <li class="nav-item">
-          <a class="nav-link" href="${basePath}windows/galdetegia.html">Autoebaluazio galdetegia</a>
+          <a class="nav-link" href="/GrAL/windows/galdetegia.html">Autoebaluazio galdetegia</a>
         </li>
 
       </ul>
